@@ -12,11 +12,13 @@
     <div style="height: 300px;">
         <lightning-datatable
                 key-field="id"
-                data={redditItems.data}
-                show-row-number-column
-                row-number-offset={rowOffset}
-                suppress-bottom-bar
-                columns={columns}>
+                data={data}
+                columns={columns}
+                onrowaction={handleRowAction}
+                sorted-direction={sortDirection}
+                onsort={doSorting}
+                hide-checkbox-column
+                >
         </lightning-datatable>
     </div>
 </template>

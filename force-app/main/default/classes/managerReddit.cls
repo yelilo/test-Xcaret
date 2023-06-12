@@ -18,7 +18,7 @@ public with sharing class managerReddit {
     */
     @AuraEnabled(cacheable=true)
     public static List<reddit_items__c> getRedditItems() {
-        List<reddit_items__c> list_variable = [SELECT author_fullname__c, title__c, thumbnail__c, selftext__c
+        List<reddit_items__c> list_variable = [SELECT Id, author_fullname__c, Title__c, thumbnail__c, selftext__c, CreatedDate
                                                 FROM reddit_items__c];
         return list_variable;
     }
@@ -108,7 +108,7 @@ public with sharing class managerReddit {
     private static reddit_items__c generaRegistroRedditItem(Map<String, Object> map_ItemsReddit) {
         reddit_items__c obj_RedditItem = new reddit_items__c();
             obj_RedditItem.author_fullname__c = map_ItemsReddit.get('author_fullname').toString();
-            obj_RedditItem.title__c           = map_ItemsReddit.get('title').toString();
+            obj_RedditItem.Title__c           = map_ItemsReddit.get('title').toString();
             obj_RedditItem.thumbnail__c       = map_ItemsReddit.get('thumbnail').toString();
             obj_RedditItem.selftext__c        = map_ItemsReddit.get('selftext').toString();
         return obj_RedditItem;
