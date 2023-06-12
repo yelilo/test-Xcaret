@@ -13,6 +13,17 @@ public with sharing class managerReddit {
     }
 
     /**
+    * Obtiene los datos del objeto Reddit Items
+    * @return list_variable
+    */
+    @AuraEnabled(cacheable=true)
+    public static List<reddit_items__c> getRedditItems() {
+        List<reddit_items__c> list_variable = [SELECT author_fullname__c, title__c, thumbnail__c, selftext__c
+                                                FROM reddit_items__c];
+        return list_variable;
+    }
+
+    /**
     * Obtiene datos de Json Reddit y los inserta en el objeto Reddit Items
     * @return list_RedditItems
     */

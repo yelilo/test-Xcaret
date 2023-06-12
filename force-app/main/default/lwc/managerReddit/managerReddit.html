@@ -1,3 +1,22 @@
+<!--
+  @description       :
+  @author            : erika.gaby0922@gmail.com
+  @group             :
+  @last modified on  : 06-12-2023
+  @last modified by  : erika.gaby0922@gmail.com
+  Modifications Log
+  Ver   Date         Author                     Modification
+  1.0   06-12-2023   erika.gaby0922@gmail.com   Initial Version
+-->
 <template>
-    
+    <div style="height: 300px;">
+        <lightning-datatable
+                key-field="id"
+                data={redditItems.data}
+                show-row-number-column
+                row-number-offset={rowOffset}
+                suppress-bottom-bar
+                columns={columns}>
+        </lightning-datatable>
+    </div>
 </template>
